@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 산술 연산자
+        var num1 = 7;
+        var num2 = 3;
+        var result;
+        result = num1 + num2;
+        document.write(result, "<br>");
+        result = num1 - num2;
+        document.write(result, "<br>");
+        result = num1 * num2;
+        document.write(result, "<br>");
+        result = num1 / num2;
+        document.write(result, "<br>");
+        result = num1 % num2;
+        document.write(result, "<br>");
+
+        // 문자 결합 연산자
+        var str1 = "java ";
+        var str2 = "script";
+        result = str1 + str2;
+        document.write(result, "<br>");
+
+        var num3 = 100;
+        var str3 = "200";
+        result = num3 + str3;
+        document.write(result, "<br>");
+
+        // 복합 대입 연산자
+        var num4 = 10;
+        var num5 = 3;
+
+        num4 += num5;
+        document.write(num4, "<br>");
+        num4 *= num5;
+        document.write(num4, "<br>");
+        num4 %= num5;
+        document.write(num4, "<br>");
+
+        var str4 = "<table border='1'>";
+        str4 += "<tr>";
+        str4 += "<td>1</td><td>2</td>";
+        str4 += "</tr>";
+        str4 += "</table>";
+        document.write(str4);
+        
+        // 증감 연산자
+        var num5 = 10;
+        var num6 = 20;
+        
+        num5--;
+        document.write(num5, "<br>");
+
+        num6++;
+        document.write(num6, "<br>");
+
+        result = num6++;
+        document.write(result, "<br>");
+        document.write(num6, "<br>");
+
+        result = --num5;
+        document.write(result, "<br>");
+        document.write(num5, "<br>");
+
+        var numA = 10;
+        var numB = 20;
+        var numC = 10;
+        var strA = "20";
+
+        result = numA > numB;
+        document.write(result, "<br>");
+
+        result = numA < numB;
+        document.write(result, "<br>");
+
+        result = numA <= numB;
+        document.write(result, "<br>");
+
+        result = numA == numB;
+        document.write(result, "<br>");
+
+        result = numB == strA;
+        document.write(result, "<br>");
+        
+        result = numB === strA;
+        document.write(result, "<br>");
+
+        result = numA != numB;
+        document.write(result, "<br>");
+
+        result = numB !== strA;
+        document.write(result, "<br>");
+
+        result = !true;
+        document.write(result, "<br>");
+        
+        // 논리 연산자
+        result = (30 != 40) && (40 === "40");
+        // 30 != 40 -> true
+        // 40 === "40" -> false
+        document.write(result, "<br>");
+
+        // 삼항 연산자
+        var numD = 10;
+        var numE = 3;
+        result = numD > numE ? "javascript" : "hello";
+        document.write(result, "<br>");
+
+        // 연산자 우선순위
+        var A = 3;
+        var B = 4;
+        var C = 5;
+        result = ++A * B <= C;
+        document.write(result, "<br>");
+        
+        A = 10;
+        B = 20;
+        C = 30;
+        var D = 40;
+
+        //          true      true
+        result = A-- < B && C == D - 10;
+        document.write(result, "<br>");
+
+        A = 10;
+        B = 20;
+        C = 30;
+        D = 40;
+
+        //        false ==  30 => false
+        result = A-- < (B && C) == D - 10;
+        document.write(result, "<br>");
+
+        document.write(9 < true, "<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

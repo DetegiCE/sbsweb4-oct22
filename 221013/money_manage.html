@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var moneyT = prompt("오늘의 교통비는?", "");
+        var moneyF = prompt("오늘의 식비는?", "");
+
+        var moneySum = Number(moneyT) + Number(moneyF);
+        var result = moneySum > 15000 ? (moneySum - 15000) + "원 초과 하였습니다." : "오늘의 돈 관리 성공!";
+        document.write(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

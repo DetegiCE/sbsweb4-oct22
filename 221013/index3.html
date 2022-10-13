@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var i = 1;
+        while(i <= 10) {
+            if(i % 2 == 0) document.write("<p style='color: blue;'>");
+            else document.write("<p style='color: red;'>");
+            document.write("안녕하세요 " + i + "</p>");
+            i++;
+        }
+        document.write("=== END ===<br>");
+
+        var j = 1;
+        do {
+            document.write("hello " + j + "<br>");
+            j++;
+        } while(j < 3);
+
+        for(var i = 1, j = 2, k = 3, n = 4 ; i <= 5 && j <= 4 ; i++) {
+            document.write("반복 " + i + "<br>");
+        }
+
+        for(var i = 1 ; i <= 50 ; i++) {
+            if(i % 5 == 0) {
+                if(i % 7 == 0) {
+                    document.write("<p style='color:green;'>" + i + "</p>");
+                }
+                else {
+                    document.write("<p style='color:red;'>" + i + "</p>");
+                }
+            }
+            else if(i % 7 == 0) {
+                document.write("<p style='color:blue;'>" + i + "</p>");
+            }
+            else {
+                document.write("<p style='color:black;'>" + i + "</p>");
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

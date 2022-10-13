@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var name = prompt("당신의 이름은 무엇입니까?", "");
+        var height = prompt("당신의 신장은?", "");
+        var weight = prompt("당신의 체중은?", "");
+
+        var normalWeight = (height - 100) * 0.9;
+        document.write("적정 체중은 " + normalWeight + "kg<br>");
+        document.write("적정 체중이 되려면 " + (weight - normalWeight) + "kg 빼야 합니다.");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

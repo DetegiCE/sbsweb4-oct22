@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for(var i = 1 ; i <= 10 ; i++) {
+            document.write(i + "<br>");
+            if(i == 6) break;
+        }
+
+        for(var i = 1 ; i <= 10 ; i++) {
+            if(i % 2 == 0) continue;
+            document.write(i + "<br>");
+        }
+
+        for(var i = 1 ; i <= 4 ; i++) {
+            for(var j = 1 ; j <= 3 ; j++) {
+                document.write(i + "행 " + j +"열 ");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<table border='1'>");
+        for(var i = 1 ; i <= 4 ; i++) {
+            document.write("<tr>");
+            for(var j = 1 ; j <= 3 ; j++) {
+                document.write("<td>" + i + "행 " + j + "열</td>")
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+        // var n = prompt("표의 크기를 입력하세요", "");
+        var n = 3;
+        var count = 1;
+        document.write("<table border='1'>");
+        for(var i = 1 ; i <= n ; i++) {
+            document.write("<tr>");
+            for(var j = 1 ; j <= n ; j++) {
+                // document.write("<td>" + count + "</td>");
+                // count++;
+                document.write("<td>" + ((i-1)*n + j) + "</td>")
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+        var dan = prompt("단을 입력해주세요", "");
+        for(var i = 1 ; i <= 9 ; i++) {
+            document.write(dan + "X" + i + "=" + (dan * i) + "<br>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

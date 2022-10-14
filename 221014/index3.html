@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var d = new Date();
+        document.write(d + "<br>");
+
+        var b = new Date("2022/2/13");
+        document.write(b + "<br>");
+
+        var c = new Date(2022, 1, 13);
+        document.write(c + "<br>");
+
+        document.write(d.getFullYear() + "<br>");
+        document.write(d.getMonth() + 1 + "<br>");
+        document.write(d.getDate() + "<br>");
+        document.write(d.getDay() + "<br>");
+        document.write(d.getTime() + "<br>");
+        document.write(d.toGMTString() + "<br>");
+        document.write(d.toLocaleString() + "<br>");
+
+        d.setFullYear(2025);
+        document.write(d + "<br>");
+
+        var year = prompt("연도를 입력해주세요", "");
+        var month = prompt("월을 입력해주세요", "");
+        var date = prompt("일을 입력해주세요", "");
+        var date1 = new Date(year, month - 1, date);
+        var yoil = date1.getDay();
+        document.write(year + "년 " + month + "월 " + date + "일은 ");
+        if(yoil == 0) document.write("일");
+        else if(yoil == 1) document.write("월");
+        switch(yoil) {
+            case 0:
+                document.write("일");
+                break;
+            case 1:
+                document.write("월");
+                break;
+            case 2: 
+                document.write("화");
+                break;
+            case 3:
+                document.write("수");
+                break;
+            case 4:
+                document.write("목");
+                break;
+            case 5:
+                document.write("금");
+                break;
+            case 6:
+                document.write("토");
+                break;
+            default:
+                document.write("오류 발생!");
+        }
+        document.write("요일입니다.<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var tv = new Object();
+        tv.color = "white";
+        tv.size = 72;
+        tv.price = 2900000;
+        tv.turnOn = function() {
+            document.write("TV를 켰다!<br>");
+        };
+        tv.turnOff = function() {
+            document.write("TV를 껐다!<br>");
+        };
+        tv.getInfo = function() {
+            document.write("TV의 색: " + this.color + "<br>");
+            document.write("TV의 사이즈: " + this.size + "인치<br>");
+            document.write("TV의 가격: " + this.price + "원<br>");
+        };
+
+        var car = {
+            color: "black",
+            price: 10000000,
+            getInfo: function() {
+                document.write("차의 색: " + this.color + "<br>");
+                document.write("차의 가격: " + this.price + "원<br>");
+            }
+        };
+
+        tv.turnOn();
+        tv.turnOff();
+        tv.getInfo();
+        car.getInfo();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

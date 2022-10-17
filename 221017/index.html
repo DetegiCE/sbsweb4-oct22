@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var absNum = Math.abs(-10);
+        var maxNum = Math.max(10, 6, 8, 30);
+
+        document.write(absNum + "<br>");
+        document.write(maxNum + "<br>");
+
+        var rand = Math.random()*10;
+        document.write(rand + "<br>");
+
+        var rand2 = Math.floor(Math.random()*11);
+        document.write(rand2 + "<br>");
+
+        var rand3 = Math.floor(Math.random() * 4 + 1);
+        document.write(rand3 + "<br>");
+
+        var userInput = prompt("가위, 바위, 보를 입력하세요.", "");
+        var compInput = Math.floor(Math.random() * 3 + 1);
+        switch(compInput) {
+            case 1:
+                compInput = "가위";
+                break;
+            case 2:
+                compInput = "바위";
+                break;
+            case 3:
+                compInput = "보";
+                break;
+            default:
+                compInput = "오류!";
+        }
+        document.write("사용자 입력 : " + userInput + "<br>");
+        document.write("컴퓨터 선택 : " + compInput + "<br>");
+        if(userInput == compInput) {
+            document.write("비겼습니다!<br>");
+        }
+        else if(userInput == "가위" && compInput == "보") {
+            document.write("당신이 이겼습니다<br>");
+        }
+        else if(userInput == "바위" && compInput == "가위") {
+            document.write("당신이 이겼습니다<br>");
+        }
+        else if(userInput == "보" && compInput == "바위") {
+            document.write("당신이 이겼습니다<br>");
+        }
+        else {
+            document.write("당신은 졌습니다.<br>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

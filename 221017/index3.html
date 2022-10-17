@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a = "javascript";
+        document.write(a[2] + "<br>");
+        document.write(a.charAt(2) + "<br>");
+        document.write(a.indexOf("sc") + "<br>");
+        document.write(a.indexOf("i") + "<br>");
+        document.write(a.indexOf("b") + "<br>");
+        document.write(a.lastIndexOf("sc") + "<br>");
+        document.write(a.lastIndexOf("a") + "<br>");
+        document.write(a.lastIndexOf("b") + "<br>");
+        document.write(a.match("v") + "<br>");
+        document.write(a.match("abcd") + "<br>");
+        document.write(a.replace("script", "language") + "<br>");
+        document.write(a.slice(1, 5) + "<br>");
+        document.write(a.slice(1, -2) + "<br>");
+        document.write(a.substring(1, 5) + "<br>");
+        document.write(a.substr(1, 5) + "<br>");
+
+        var b = "html!css!js";
+        document.write(b.split('!') + "<br>");
+    
+        var c = "JavaScript";
+        document.write(c.toLowerCase() + "<br>");
+        document.write(c.toUpperCase() + "<br>");
+        document.write(c.length + "<br>");
+        document.write(c.concat("HTML") + "<br>");
+
+        var d = "      Java Script   ";
+        document.write(d.trim() + "<br>");
+
+        var e = "Apple";
+        document.write(e.charCodeAt(0) + "<br>");
+        document.write(e.charCodeAt(4) + "<br>");
+        document.write(String.fromCharCode(70) + "<br>");
+        document.write(String.fromCharCode(44032) + "<br>");
+
+        var f = '가힣'
+        document.write(f.charCodeAt(0) + "<br>");
+        document.write(f.charCodeAt(1) + "<br>");
+
+        document.write(String.fromCharCode(44032 + 0*588 + 20*28 + 16));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

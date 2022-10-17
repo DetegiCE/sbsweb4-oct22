@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var stu_info = new Array(20220101, "홍길동", 3.8);
+        document.write("학생의 이름은 " + stu_info[1] + "입니다.<br>");
+        document.write("학생의 학번은 " + stu_info[0] + "입니다.<br>");
+        document.write("학생의 성적은 " + stu_info[2] + "입니다.<br>");
+
+        var stu_info2 = [20210202, "마리아", 4.1];
+        for(var i = 0 ; i < 3 ; i++) {
+            document.write(stu_info2[i] + "<br>");
+        }
+        
+        for(var i = 0 ; i < stu_info2.length ; i++) {
+            document.write(stu_info2[i] + "<br>");
+        }
+
+        for(i in stu_info2) {
+            document.write(stu_info2[i] + "<br>");
+        }
+
+        var line2 = ["신대방", "신림", "봉천", "서울대입구"];
+        document.write(line2.join("-") + "<br>");
+
+        var nums = [1, 2, 3, 4];
+        document.write(nums.join("*") + "<br>");
+
+        document.write(line2 + "<br>");
+        document.write(line2.reverse() + "<br>");
+
+        document.write(line2.sort() + "<br>");
+
+        var num3 = [100, 90, 80];
+        document.write(num3.sort() + "<br>");
+
+        document.write(line2.slice(1, 3) + "<br>");
+
+        var line3 = ["대치", "도곡", "매봉", "양재"];
+        var line3_2 = ["남부터미널", "교대"];
+        document.write(line3.concat(line3_2) + "<br>");
+
+        line3.pop();
+        document.write(line3 + "<br>");
+
+        line3.push("양재");
+        document.write(line3 + "<br>");
+
+        line3.shift();
+        document.write(line3 + "<br>");
+
+        line3.unshift("대치");
+        document.write(line3 + "<br>");
+
+        var n = prompt("배열의 개수를 입력하세요", "");
+        var array1 = new Array();
+        for(var i = 0 ; i < n ; i++) {
+            var input = prompt("배열에 추가할 값을 입력하세요.", "");
+            array1.push(input);
+        }
+        document.write(array1 + "<br>");
+        array1.sort();
+        document.write(array1.reverse() + "<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

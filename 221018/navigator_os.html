@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var osChange = setInterval(function() {
+            document.body.innerHTML = "";
+            var info = navigator.userAgent;
+            var oslogo = '';
+
+            if(info.indexOf('Windows') >= 0) {
+                oslogo = './img/windows.png';
+            }
+            else if(info.indexOf('Macintosh') >= 0) {
+                oslogo = './img/macintosh.png';
+            }
+            else if(info.indexOf('iPhone') >= 0) {
+                oslogo = './img/iphone.png';
+            }
+            else if(info.indexOf('iPad') >= 0) {
+                oslogo = './img/ipad.png';
+            }
+            else if(info.indexOf('Android') >= 0) {
+                oslogo = './img/android.png';
+            }
+            else {
+                oslogo = './img/unknown.png';
+            }
+
+            document.write("<img src='" + oslogo + "' width='250'><br>");
+            document.write("모니터 해상도 너비: " + screen.width + "px<br>");
+            document.write("모니터 해상도 높이: " + screen.height + "px<br>");
+
+        }, 300);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

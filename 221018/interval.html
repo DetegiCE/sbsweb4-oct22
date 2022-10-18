@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var i = 0;
+        var autoNumber = setInterval(function() {
+            i++;
+            console.log(i);
+        }, 500);
+
+        var j = 0;
+        var autoSize = setInterval(function() {
+            j++;
+            document.write("<p style='font-size:" + j + "px'>" + j + "</p>");
+            if(j == 50) clearInterval(autoSize);
+        }, 1000);
+    </script>
+</head>
+<body>
+    <button onclick="clearInterval(autoNumber)">숫자 정지하기</button>
+</body>
+</html>

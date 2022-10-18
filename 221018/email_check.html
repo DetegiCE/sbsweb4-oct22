@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var userEmail = prompt("이메일을 입력하세요", "");
+
+        // @이 입력 값에서 몇번째 위치에 있냐?
+        if(userEmail.indexOf('@') >= 3) {
+            var cokrArray = userEmail.split('.co.kr');
+            var comArray = userEmail.split('.com');
+            var netArray = userEmail.split('.net');
+            if(cokrArray.length == 1) {
+                var arrayEmail = userEmail.split('@');
+                if(arrayEmail[1].length >= 9) {
+                    alert("유효한 이메일입니다.");
+                }
+                else {
+                    alert("유효하지 않은 이메일입니다.");
+                }
+            } 
+            else if(comArray.length == 1 || netArray.length == 1) {
+                var arrayEmail = userEmail.split('@');
+                if(arrayEmail[1].length >= 7) {
+                    alert("유효한 이메일입니다.");
+                }
+                else {
+                    alert("유효하지 않은 이메일입니다.");
+                }
+            }
+            else {
+                alert("유효하지 않은 이메일입니다.");
+            }
+        }
+        else {
+            alert("유효하지 않은 이메일입니다.");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

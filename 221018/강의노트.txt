@@ -1,0 +1,80 @@
+이메일 체크하기
+prompt를 이용해서 이메일 주소를 입력받습니다
+입력받은 값에 대해서 유효한 이메일인지 확인
+조건 1: @있어야 한다
+조건 2: @ 앞에 적어도 3자리 이상의 문자
+조건 3: .co.kr, .com, .net 으로 끝나야 한다
+조건 4: 조건 3의 문자를 제외한 나머지 문자의 개수가 3개 이상이어야 한다
+조건 4개 모두 충족하면 "유효한 이메일입니다"
+하나라도 만족 못하면 "유효하지 않은 이메일입니다" 
+
+AAA@naver.com => 3
+gadfklajgkaj@gmail.com => 12
+
+abc@naver.com
+
+
+브라우저 객체 모델 (BOM)
+window (브라우저 창)
+- document (html 문서)
+- screen
+- location
+- history
+- navigator
+
+
+window 객체 (창을 다루는 객체)
+- open(URL, 이름, 옵션) = 새 창으로 url로 이동시킨다 (팝업창 띄우기)
+옵션 = width(너비), height(높이), left(화면에서 왼쪽에서부터 얼마나 위치), top(화면에서 위에서부터 얼마나 위치), scrollbars(스크롤바를 보일거냐?(yes, no))
+- alert(메시지) = 경고 창을 띄운다.
+- prompt(질문, 답변) = 질의응답 창을 띄운다.
+- confirm(질문) = 확인/취소 창을 띄운다
+- setInterval, setTimeout (일정한 시간 간격으로 코드를 실행한다)
+var 변수 = setInterval(function() { 코드 }, 시간간격(ms));
+
+var interval = setInterval(function() {
+            document.write("안녕하세요!<br>");
+}, 500);
+500ms 마다 창에 안녕하세요 글씨를 쓴다
+
+setInterval은 clearInterval을 통해서 멈출 수 있다.
+clearInterval(setInterval 변수);
+- console.log(메시지): 크롬의 콘솔 창에 로그를 남기는 함수
+
+setInterval과 별도의 변수를 활용해서 1부터 점점 커지는데 글씨크기도 1부터 점점 커지도록 하는 사이트를 만들어봅시다.
+출력 간격은 1000ms (1초), i값이 50에 도달하면 자동으로 코드가 멈추도록
+
+- setTimeout: 일정 시간이 지나면 코드를 실행하고 종료한다
+
+var 변수 = setTimeout(function() { 코드 }, 시간간격(ms));
+clearTimeout(변수) -> setTimeout를 취소시킨다
+
+
+
+screen 객체 
+-> 사용자의 모니터 정보를 가져오는 객체
+screen.width -> 화면의 너비
+screen.height -> 화면의 높이
+screen.availWidth -> 작업표시줄을 제외한 화면의 너비
+screen.availHeight -> 작업표시줄을 제외한 화면의 높이
+screen.colorDepth -> 모니터의 컬러 비트 수
+0~255 rgb => 255 = 2^8 - 1 (=8비트)
+
+
+location 객체
+-> 사용자의 브라우저와 관련된 속성
+location.href => 사용자의 URL을 통째로 가져오기
+~.hash => url에서 # 뒤의 값
+~.hostname => url에서 주소 값만
+~.host => 주소 + 포트 번호
+~.protocol => // 앞의 값
+~.search => ? 뒤의 값 (쿼리)
+~.reload() => 새로 고침
+
+Date 객체 + 새로 고침 + setTimeout 을 이용해서 현재 시간을 1초마다 계속 바뀌도록 설정하는 코드
+
+2022-10-18 11:51:01
+2022-10-18 11:51:02
+2022-10-18 11:51:03
+....
+=> 새로 고침되면서 딱 한 줄로만 날짜+시간이 나오도록

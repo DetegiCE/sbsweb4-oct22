@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var width = screen.width;
+        var height = screen.height / 2;
+        var randomChange = setInterval(function() {
+            document.body.innerHTML = "";
+            var red = Math.floor(Math.random()*256);
+            var green = Math.floor(Math.random()*256);
+            var blue = Math.floor(Math.random()*256);
+            
+            var widthStyle = "width: " + width + "px;";
+            var heightStyle = "height: " + height + "px;";
+            var colorStyle = "background-color: rgb(" + red + "," + green + "," + blue + ");";
+            var styleTag = "style = '" + widthStyle + heightStyle + colorStyle + "'";
+            document.write("<p " + styleTag + "></p>");
+        }, 1000);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

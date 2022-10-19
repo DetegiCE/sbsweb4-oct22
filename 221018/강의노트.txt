@@ -78,3 +78,62 @@ Date 객체 + 새로 고침 + setTimeout 을 이용해서 현재 시간을 1초�
 2022-10-18 11:51:03
 ....
 => 새로 고침되면서 딱 한 줄로만 날짜+시간이 나오도록
+
+
+history 객체
+-> 사용자의 방문한 사이트 기록 (이전 방문 사이트, 다음 방문 사이트로 이동 가능하도록)
+history.back() -> 이전 방문 사이트로 이동
+~.forward() -> 다음 방문 사이트로 이동
+~.go(숫자) -> n단계 이전/다음으로 이동
+ (.go(-2) -> 2단계 이전 사이트, .go(3) -> 3단계 다음 사이트)
+~.length -> 방문 기록의 길이
+
+naver.com         <= history.go(-3)
+naver.com/login
+naver.com/cafe  <= history.back()
+naver.com/blog  <= 현재 상태
+gmail.com          <= history.forward()
+sbsart.com
+sbsart.com/portfolio <= history.go(3)
+
+
+*** navigator 객체 ***
+- 현재 사이트 방문자가 사용하는 브라우저 정보/운영체제 정보
+
+크롬 콘솔 창에서 navigator.userAgent를 쳐보면 현재 방문자(나)의 브라우저와 운영체제 정보를 알 수 있음
+
+PC크롬 : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36
+
+PC엣지 : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.47
+
+iPhone 12 Pro 크롬 : Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+
+갤럭시 폴드 크롬 : Mozilla/5.0 (Linux; Android 9.0; SAMSUNG SM-F900U Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36
+
+플랫폼 정보 ( 운영체제 정보 ) 브라우저 엔진 정보, 브라우저의 이름, 호환 가능한 브라우저 이름
+
+navigator.appCodeName => 플랫폼 정보 (코드명)
+navigator.appName => 브라우저의 이름
+~.appVersion => 브라우저의 버전 정보
+~.language => 브라우저의 언어
+https://www.andiamo.co.uk/resources/iso-language-codes/
+ ko-KR => 한국어-대한민국
+ ja-JP => 일본어-일본
+ en-US => 영어-미국
+ en-GB => 영어-영국
+ en-IE => 영어-아일랜드
+ zh-HK => 중국어-홍콩
+~.product => 엔진 이름
+~.platform => 운영체제 정보
+~.onLine => 현재 인터넷 연결 여부
+
+
+navigator 객체와 screen 객체를 활용해서 현재 사용자의 OS(윈도우, 맥, 아이폰, 안드로이드)와 창의 크기를 출력하는 프로그램을 만들어봅시다.
+
+OS는 글씨로 출력하는게 아닌 OS에 따른 사진
+
+navigator.userAgent
+윈도우 -> Windows
+맥 -> Macintosh
+아이폰 -> iPhone
+안드로이드 -> Android

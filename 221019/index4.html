@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var colorArray = ["yellow", "blue", "green", "purple"];
+
+        var colorNumber = 0;
+        function changeColor() {
+            colorNumber++;
+            if(colorNumber >= 4) {
+                colorNumber = 0;
+            }
+            var bodyTag = document.getElementById("body");
+            bodyTag.style.backgroundColor = colorArray[colorNumber];
+        }
+    </script>
+</head>
+<body id="body">
+    <button onclick="changeColor();">배경색 바꾸기</button>
+</body>
+</html>

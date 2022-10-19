@@ -1,0 +1,11 @@
+screen 객체를 이용해서 화면의 세로 절반 크기만큼 색깔을 채우되, 그 색깔은 1초마다 랜덤 색상으로 바뀌도록 되는 프로그램을 만들어봅시다
+
+
+screen.height의 절반만큼만 
+1초마다 => setInterval
+랜덤색상 rgb(0~255, 0~255, 0~255) 랜덤
+
+setInterval의 함수 내부의 맨 위에
+document.body.innerHTML = ""; 를 추가
+
+Math.random(); 0이상 1미만 -> 0 이상 256미만

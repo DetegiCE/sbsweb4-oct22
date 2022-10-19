@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var country = navigator.language;
+        var flagimg = '';
+
+        if(country.indexOf("KR")) {
+            flagimg = './img/korea.png';
+        }
+        else if(country.indexOf("JP")) {
+            flagimg = './img/japan.png';
+        }
+        else if(country.indexOf("US")) {
+            flagimg = './img/usa.png';
+        }
+        else {
+            alert("지원하지 않는 언어입니다.");
+        }
+
+        if(flagimg.length > 0) {
+            document.write("<img src='" + flagimg + "'>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function CheckWeight(name, height, weight) {
+            this.userName = name;
+            this.userHeight = height;
+            this.userWeight = weight;
+            this.minWeight;
+            this.maxWeight;
+
+            this.getResult = function() {
+                this.minWeight = (this.userHeight - 100) * 0.9 - 5;
+                this.maxWeight = (this.userHeight - 100) * 0.9 + 5;
+
+                if(this.userWeight >= this.minWeight && this.userWeight <= this.maxWeight) {
+                    return "적정 체중입니다.";
+                }
+                else {
+                    return "적정 체중이 아닙니다.";
+                }
+            }
+        }
+
+        var user1 = new CheckWeight("홍길동", 180, 70);
+        var user2 = new CheckWeight("마리아", 160, 90);
+
+        document.write(user1.getResult() + "<br>");
+        document.write(user2.getResult() + "<br>");
+
+        console.log(user1);
+        console.log(user2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function StudentInfo(name, number, birthday, avgScore) {
+            this.studentName = name;
+            this.studentNumber = number;
+            this.studentBirth = birthday;
+            this.studentScore = avgScore;
+            this.studentRank;
+
+            this.calcRank = function() {
+                if(this.studentScore >= 4.0) {
+                    this.studentRank = "A";
+                }
+                else if(this.studentScore >= 3.0) {
+                    this.studentRank = "B";
+                }
+                else if(this.studentScore >= 2.0) {
+                    this.studentRank = "C";
+                }
+                else {
+                    this.studentRank = "F";
+                }
+            }
+
+            this.getScore = function() {
+                this.calcRank();
+                var returnStr = this.studentName;
+                returnStr += "(" + this.studentNumber + ") ";
+                returnStr += "학생의 학점은 ";
+                returnStr += this.studentRank;
+                returnStr += " 입니다.";
+                return returnStr;
+            }
+        }
+
+        var student1 = new StudentInfo("홍길동", 20220101, "20031010", 3.5);
+        document.write(student1.getScore());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

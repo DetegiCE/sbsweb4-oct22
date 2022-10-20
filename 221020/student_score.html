@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function StudentScore(name, gradeClass, subNum) {
+            this.studentName = name;
+            this.studentClass = gradeClass;
+            this.studentSubNum = subNum;
+            this.studentSubArray;
+            this.studentScoreArray;
+
+            this.inputSubject = function() {
+                this.studentSubArray = new Array();
+                for(var i = 1 ; i <= this.studentSubNum ; i++) {
+                    var subjectName = prompt("과목 " + i + "의 이름을 입력하세요", "");
+                    this.studentSubArray.push(subjectName);
+                }
+            }
+
+            this.inputScore = function() {
+                this.studentScoreArray = new Array();
+                for(var i = 0 ; i < this.studentSubNum ; i++) {
+                    var subjectScore = Number(prompt(this.studentSubArray[i] + " 과목의 점수를 입력하세요", ""));
+                    this.studentScoreArray.push(subjectScore);
+                }
+            }
+
+            this.getScore = function(subjectName) {
+                for(var i = 0 ; i < this.studentSubNum ; i++) {
+                    if(this.studentSubArray[i] == subjectName) {
+                        var returnStr = this.studentName;
+                        returnStr += "(" + this.studentClass + ") 학생의 ";
+                        returnStr += subjectName;
+                        returnStr += " 점수는 ";
+                        returnStr += this.studentScoreArray[i];
+                        returnStr += "점입니다."
+                        return returnStr;
+                    }
+                }
+                return "오류 발생!";
+            }
+
+            this.getAverage = function() {
+                var scoreSum = 0;
+                for(var i = 0 ; i < this.studentSubNum ; i++) {
+                    scoreSum += this.studentScoreArray[i];
+                }
+                var scoreAvg = scoreSum / this.studentSubNum;
+                
+                var returnStr = this.studentName;
+                returnStr += "(" + this.studentClass + ") 학생의 ";
+                returnStr += "평균 점수는 ";
+                returnStr += scoreAvg;
+                returnStr += "점입니다."
+                return returnStr;
+            }
+        }
+
+        var student1 = new StudentScore("홍길동", "3-1", 4);
+        student1.inputSubject();
+        student1.inputScore();
+        document.write(student1.getScore("국어") + "<br>"); 
+        document.write(student1.getAverage() + "<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

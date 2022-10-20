@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var photoNum = 1;
+        function move(direction) {
+            if(direction == 0) {
+                photoNum -= 1;
+                if(photoNum == 0) {
+                    photoNum = 5;
+                }
+            }
+            else {
+                photoNum += 1;
+                if(photoNum == 6) {
+                    photoNum = 1;
+                }
+            }
+
+            var imgTag = document.getElementById("photo");
+            imgTag.setAttribute("src", "img/pic_" + photoNum + ".png");
+        }
+    </script>
+</head>
+<body>
+    <div id="slider">
+        <p>
+            <img src="img/pic_1.png" id="photo">
+        </p>
+        <p>
+            <button onclick="move(0);">이전 사진</button>
+            <button onclick="move(1);">다음 사진</button>
+        </p>
+    </div>
+</body>
+</html>

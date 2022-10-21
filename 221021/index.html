@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#food_1 h2").css("color", "red");
+            $("#food_2 ul li:nth-child(1)").css("color", "blue");
+            $("#food_1 h2").parent().css("font-weight", "bold");
+
+            $("#japan li").eq(2).css("background-color", "green");
+            $("#japan li:eq(1)").css("background-color", "blue");
+            $("#japan li:lt(1)").css("background-color", "red");
+            $("#japan li:gt(2)").css("background-color", "yellow");
+
+            $("#china li").slice(1, 3).css("text-decoration", "underline");
+
+            $("#line_1 li:even").css("background-color", "red");
+            $("#line_2 li:last").css("background-color", "yellow");
+            $("#line_2_1 li:nth-child(3)").css("background-color", "yellow");
+
+            $("#line_3 li:lt(4)").css("background-color", "green");
+        });
+    </script>
+</head>
+<body>
+    <h1>음식 종류</h1>
+    <section id="food_1">
+        <h2>한식</h2>
+        <ul>
+            <li>김치볶음밥</li>
+            <li>불고기</li>
+        </ul>
+    </section>
+    <section id="food_2">
+        <h2>양식</h2>
+        <ul>
+            <li>치즈피자</li>
+            <li>스테이크</li>
+        </ul>
+    </section>
+    <section id="food_3">
+        <h2>일식</h2>
+        <ul id="japan">
+            <li>참치회</li>
+            <li>참치초밥</li>
+            <li>우동</li>
+            <li>돈까스</li>
+            <li>메밀소바</li>
+        </ul>
+    </section>
+    <section id="food_4">
+        <h2>중식</h2>
+        <ul id="china">
+            <li>짜장면</li>
+            <li>짬뽕</li>
+            <li>탕수육</li>
+            <li>마라탕</li>
+        </ul>
+    </section>
+    <section>
+        <h2>1호선</h2>
+        <ul id="line_1">
+            <li>구로</li>
+            <li>신도림</li>
+            <li>영등포</li>
+            <li>신길</li>
+            <li>대방</li>
+            <li>노량진</li>
+            <li>용산</li>
+        </ul>
+    </section>
+    <section>
+        <h2>2호선</h2>
+        <ul id="line_2">
+            <li>신림</li>
+            <li>봉천</li>
+            <li>서울대입구</li>
+        </ul>
+    </section>
+    <section>
+        <h2>2호선</h2>
+        <ul id="line_2_1">
+            <li>신림</li>
+            <li id="line_20">봉천</li>
+            <li id="line_21">서울대입구</li>
+        </ul>
+    </section>
+    <section>
+        <h2>3호선</h2>
+        <ul id="line_3">
+            <li>약수</li>
+            <li>금호</li>
+            <li>옥수</li>
+            <li>압구정</li>
+            <li>신사</li>
+        </ul>
+    </section>
+</body>
+</html>

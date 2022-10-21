@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        var line_2 = [
+            {"station": "사당", "english": "Sadang"},
+            {"station": "방배", "english": "Bangbae"},
+            {"station": "서초", "english": "Seocho"}
+        ];
+
+        $(line_2).each(function(i, v) {
+            document.write(i + ": ", v, "<br>");
+            console.log(i + ": ", v);
+        });
+        console.log("=================");
+        
+        $(line_2).each(function(i, v) {
+            document.write(i + ": ", v, "<br>");
+            console.log(i + ": ", v['english']);
+        });
+        console.log("=================");
+
+        $(document).ready(function() {
+            $("#line_3 li").each(function(i) {
+                console.log(i + ": ", $(this));
+            });
+
+            $("#line_3 li").each(function(i, v) {
+                console.log(i + ": ", v);
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul id="line_3">
+        <li>잠원</li>
+        <li>고속터미널</li>
+        <li>교대</li>
+    </ul>
+</body>
+</html>

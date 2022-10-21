@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ItemInfo(code, name, price) {
+            this.itemCode = code;
+            this.itemName = name;
+            this.itemPrice = price;
+            this.itemImage;
+
+            this.getInfo = function() {
+                this.itemImage = './img/' + this.itemCode + '.jpg';
+
+                var imageTag = document.getElementById("itemImage");
+                imageTag.setAttribute("src", this.itemImage);
+
+                var priceTag = document.getElementById("itemPrice");
+                priceTag.innerText = this.itemPrice;
+            }
+        }
+
+        var iphone = new ItemInfo('aaa123', 'iPhone 14', 2100000);
+        var galaxyfold = new ItemInfo('bbb123', 'Galaxy Fold', 1400000);
+        var ipadpro = new ItemInfo('ccc123', 'iPad Pro M1', 1900000);
+    </script>
+</head>
+<body>
+    <p>
+        <img src="" id="itemImage">
+    </p>
+    <p>
+        <span>가격: </span>
+        <span id="itemPrice"></span>
+        <span>원</span>
+    </p>
+    <button onclick="iphone.getInfo();">iPhone 14</button>
+    <button onclick="galaxyfold.getInfo();">Galaxy Fold</button>
+    <button onclick="ipadpro.getInfo();">iPad Pro M1</button>
+</body>
+</html>

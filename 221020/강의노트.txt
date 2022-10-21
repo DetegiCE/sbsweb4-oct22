@@ -72,7 +72,8 @@ document.write(student1.getAverage() + "<br>"); => 홍길동(3-1) 학생의 평�
 studentName = "홍길동"
 studentClass = "3-1"
 studentSubNum = 4
-
+studentSubArray = ["국어", "영어", "수학", "과학"]
+studentScoreArray = [100, 90, 80, 70]
 
 
 

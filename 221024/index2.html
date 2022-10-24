@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(function() {
+            $("#line_1").find(".sta_1").css({"background-color": "red"});
+
+            $("#line_1 p").filter(".sta_2").css({"background-color": "green"});
+
+            $("#line_2 p").filter(function(i, v) {
+                return i % 2 == 1;
+            }).css({"background-color": "yellow"});
+
+            $("#line_3 p:contains(연신내)").css({"background-color": "orange"});
+
+            $("#line_3 p:has(strong)").css({"background-color": "pink"});
+
+            $("#line_3 p").not(":first").css({"border": "1px solid red"});
+
+            var hyehwaVisible = $("#line_4 p").eq(0).is(":visible");
+            console.log(hyehwaVisible);
+            var ddmVisible = $("#line_4 p").eq(1).is(":hidden");
+            console.log(ddmVisible);
+
+            var mapoCheck = $("#mapo").is(":checked");
+            console.log(mapoCheck);
+            var gdCheck = $("#gongduk").is(":checked");
+            console.log(gdCheck);
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <section id="line_1">
+            <h2>1호선</h2>
+            <p class="sta_1">신설동</p>
+            <p class="sta_2">제기동</p>
+            <p class="sta_3">청량리</p>
+        </section>
+        <section id="line_2">
+            <h2>2호선</h2>
+            <p>뚝섬</p>
+            <p>성수</p>
+            <p>건대입구</p>
+            <p>구의</p>
+        </section>
+        <section id="line_3">
+            <h2>3호선</h2>
+            <p>연신내</p>
+            <p><strong>불광</strong></p>
+            <p>녹번</p>
+            <p>홍제</p>
+        </section>
+        <section id="line_4">
+            <h2>4호선</h2>
+            <p>혜화</p>
+            <p style="display: none;">동대문</p>
+        </section>
+        <section id="line_5">
+            <h2>5호선</h2>
+            <input type="checkbox" name="mapo" id="mapo" checked> <label for="mapo">마포</label>
+            <input type="checkbox" name="gongduk" id="gongduk"> <label for="gongduk">공덕</label>
+        </section>
+    </div>
+</body>
+</html>

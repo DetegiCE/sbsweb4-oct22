@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        var line_1 = ['용산', '남영', '서울역', '시청', '종각', '시청'];
+        var seoulIdx = $.inArray("서울역", line_1);
+        document.write("서울역은 " + seoulIdx + "번 인덱스에 있습니다.<br>");
+
+        var cityhallIndex = $.inArray("시청", line_1, 4);
+        document.write("시청은 " + cityhallIndex + "번 인덱스에 있습니다.<br>");
+
+        var line_1_a = '1호선';
+        document.write("line_1은 배열이 맞나요? " + $.isArray(line_1) + "<br>");
+        document.write("line_1_a은 배열이 맞나요? " + $.isArray(line_1_a) + "<br>");
+
+        var line_2 = ['신촌', '이대', '아현'];
+        document.write(line_1 + line_2 + "<br>");
+
+        var mergeArray = $.merge(line_1, line_2);
+        document.write(mergeArray + "<br>");
+
+        $(function() {
+            var ul_line_2 = $("#ul_line_2 li");
+            $.each(ul_line_2, function(i, v) {
+                console.log(i + ": ", v);
+                console.log(v.innerHTML);
+            });
+            var line_2_list = $.map(ul_line_2, function(v, i) {
+                return v.innerHTML;
+            });
+            console.log("시청은 " + $.inArray("시청", line_2_list) + "번째에 있습니다.");
+
+            var imgList = $("#gallery img");
+            var imgIdList = $.map(imgList, function(v, i) {
+                return v.getAttribute("id");
+            });
+            console.log(imgIdList);
+            var samsungId = $.inArray("samsung", imgIdList);
+            console.log("samsung은 " + samsungId + "번째에 있습니다.");
+            console.log(imgList[samsungId].getAttribute("src"));
+        
+            var wIdx = $("li").index($("#wangsimni"));
+            console.log(wIdx);
+
+            $("a[href^='https://']").css({"color": "red"});
+            $("a[href$='.net']").css({"color": "blue"});
+            $("a[href*='naver']").css({"color": "green"});
+            $("a[href^='https://']").css("color", "red");
+        });
+    </script>
+</head>
+<body>
+    <ul id="ul_line_2">
+        <li>충정로</li>
+        <li>시청</li>
+        <li>을지로입구</li>
+    </ul>
+
+    <div id="gallery">
+        <img src="./img/apple.png" id="apple">
+        <img src="./img/samsung.png" id="samsung">
+        <img src="./img/lg.jpg" id="lg">
+        <img src="./img/huawei.jpg" id="huawei">
+    </div>
+
+    <ul>
+        <li>신당</li>
+        <li>상왕십리</li>
+        <li id="wangsimni">왕십리</li>
+        <li>한양대</li>
+    </ul>
+
+    <a href="https://google.com">구글 바로가기</a>
+    <a href="http://naver.com">네이버 바로가기</a>
+    <a href="https://sbsart.com">SBS아카데미 바로가기</a>
+    <a href="https://abc.co.kr">ABC 바로가기</a>
+    <a href="http://def.net">DEF 바로가기</a>
+</body>
+</html>

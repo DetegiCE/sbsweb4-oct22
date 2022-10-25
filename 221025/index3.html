@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js">    </script>
+    <script>
+        $(function() {
+            var result1 = $("#username").val();
+            console.log(result1);
+
+            $("#userid").val("javascript");
+
+            var result2 = $("#userid").prop("defaultValue");
+            console.log(result2);
+
+            var result3 = $("#chk1").prop("checked");
+            console.log(result3);
+
+            var result4 = $("#chk2").prop("checked");
+            console.log(result4);
+
+            $("#chk3").prop("checked", "true");
+
+            var result5 = $("#sel1").prop("tagName");
+            console.log(result5);
+
+            var result6 = $("#sel1").prop("nodeType");
+            console.log(result6);
+
+            var result7 = $("#sel1").prop("selectedIndex");
+            console.log(result7);
+
+            var w1 = $("#i201").width();
+            var w2 = $("#i201").innerWidth();
+            var w3 = $("#i201").outerWidth();
+            console.log(w1, w2, w3);
+
+            $("#i202").outerWidth(100).outerHeight(200);
+            var w4 = $("#i202").width();
+            var w5 = $("#i202").innerWidth();
+            var w6 = $("#i202").outerWidth();
+            console.log(w4, w5, w6);
+        });
+    </script>
+    <style>
+        #i201, #i202 {
+            width: 100px;
+            height: 50px;
+            padding: 20px;
+            border: 5px solid black;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>개인정보 입력창</h1>
+    <form id="form_1">
+        <p>
+            <label for="username">이름</label>
+            <input type="text" name="username" id="username" value="홍길동">
+        </p>
+        <p>
+            <label for="userid">아이디</label>
+            <input type="text" name="userid" id="userid" value="hong-gildong">
+        </p>
+        <p>
+            <h2>나이 선택</h2>
+            <input type="checkbox" name="chk1" id="chk1">
+            <label for="chk1">10대</label>
+            <input type="checkbox" name="chk2" id="chk2" checked>
+            <label for="chk2">20대</label>
+            <input type="checkbox" name="chk3" id="chk3">
+            <label for="chk3">30대</label>
+        </p>
+        <p>
+            <h2>가입 경로 선택</h2>
+            <select name="sel1" id="sel1">
+                <option value="blog">블로그</option>
+                <option value="search">검색</option>
+                <option value="person" selected>지인추천</option>
+            </select>
+        </p>
+    </form>
+    <p id="i201">역삼</p>
+    <p id="i202">강남</p>
+</body>
+</html>

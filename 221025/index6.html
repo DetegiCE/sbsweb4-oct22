@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js">    </script>
+    <script>
+        function changeColor() {
+            var color = prompt("변경할 색상을 입력해주세요", "");
+
+        }
+        function ulToggle() {
+
+        }
+        function textCopy() {
+
+        }
+        function newText() {
+            var text = prompt("새롭게 입력할 텍스트를 입력해주세요", "");
+
+        }
+        function fontSize(mode) {
+            
+        }
+    </script>
+    <style>
+        .underline {
+            text-decoration: udnerline;
+        }
+    </style>
+</head>
+<body>
+    <p id="textScreen">텍스트</p>
+    <div>
+        <button onclick="changeColor()">색상 변경</button>
+        <button onclick="ulToggle()">밑줄 토글</button>
+        <button onclick="textCopy()">텍스트 복제</button>
+        <button onclick="newText()">텍스트 새로 쓰기</button>
+        <button onclick="fontSize(-1)">글씨 크기 -</button>
+        <button onclick="fontSize(1)">글씨 크기 +</button>
+    </div>
+</body>
+</html>

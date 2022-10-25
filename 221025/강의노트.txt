@@ -1,0 +1,79 @@
+객체 조작 함수 (메소드)
+- 객체 생성/복제/삭제, 속성 삭제/생성
+
+$(요소).html() -> 요소의 모든 하위 요소
+$(요소).html(다른 요소) -> 요소의 모든 하위 요소를 지우고 "다른 요소"를 추가한다
+
+$(요소).text() -> 요소에 있는 모든 텍스트를 가져온다
+$(요소).text(새 텍스트) -> 요소에 있는 텍스트를 지우고 새 텍스트를 추가한다
+
+$(요소).attr(속성) -> 요소 태그에 있는 속성 값을 가져온다
+$(요소).attr(속성이름, 값) -> 요소 태그에 속성이름을 값으로 변경/추가
+$(요소).attr({속성1: 값1, 속성2: 값2}) -> 여러개의 속성을 한 번에 바꿀 때
+$(요소).removeAttr(속성)
+
+$(요소).addClass(클래스 값)
+$(요소).removeClass(클래스 값)
+$(요소).toggleClass(클래스 값) -> 해당 클래스가 있으면 삭제, 없으면 생성
+$(요소).hasClass(클래스 값)
+
+$(요소).val() -> 폼 요소의 value 속성 값을 가져옴
+$(요소).val(새 값) -> 폼 요소의 value 값을 새 값으로 변경
+
+$(요소).prop(checked | selected) -> 체크 또는 선택 된 상태인지 가져오게 됨 (true, false)
+ex) $(요소).prop("checked") -> 체크박스
+ex) $(요소).prop("selected") -> 셀렉트 박스
+$(요소).prop(checked | selected, true | false) -> 해당하는 체크/셀렉트 박스에 대해서 체크 여부를 변경
+$(요소).prop(tagName | nodeType | selectedIndex | defaultValue)
+-> tagName - 요소의 태그 이름을 가져온다
+-> nodeType - 노드 타입
+(1 -> 요소, 3 -> 텍스트, 4 -> CDATA, 8 -> 주석,10-> !DOCTYPE)
+-> selectedIndex - 셀렉트 박스에서 몇 번째 값이 선택되었는지
+-> defaultValue - 해당 input에서 value의 초기값을 보여줌
+
+
+수치 조작 메소드 (함수)
+$(요소).height() -> 높이값 가져옴
+$(요소).height(값) -> 높이값 설정
+
+$(요소).width() -> 너비값 가져옴
+$(요소).width(값) -> 너비값 설정
+
+inner~~가 붙으면 -> padding까지의 크기를 가져오거나 설정한다
+$(요소).innerHeight()
+$(요소).innerHeight(값)
+$(요소).innerWidth()
+$(요소).innerWidth(값)
+
+outer~~가 붙으면 -> border까지의 크기를 가져오거나 설정한다
+$(요소).outerHeight()
+$(요소).outerHeight(값)
+$(요소).outerWidth()
+$(요소).outerWidth(값)
+
+$(요소).position().left, right, top, bottom -> 요소 기준
+$(요소).offset().left, top -> 문서 기준
+
+스크롤바의 위치
+$(요소).scrollTop()
+$(요소).scrollLeft()
+-> 현재 스크롤바의 위치
+$(요소).scrollTop(값)
+$(요소).scrollLeft(값)
+-> 스크롤바의 위치를 조정
+
+
+화면에 텍스트가 있습니다
+버튼 1: 텍스트의 색상을 입력받아서 해당 색상으로 바꾸기 -> prompt로 입력 받아서 변경
+버튼 2: 누르면 밑줄이 생겼다가 지워졌다가 반복
+버튼 3: 화면의 텍스트를 두 번 쓰기 (코딩 -> 코딩코딩)
+버튼 4: 텍스트 바꾸기 -> prompt로 입력 받아서 변경
+버튼 5: 글씨 크기 줄이기
+버튼 6: 글씨 크기 키우기
+
+
+
+
+
+
+

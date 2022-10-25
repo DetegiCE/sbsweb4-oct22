@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(function() {
+            var result1 = $("#line_101").html();
+            console.log(result1);
+            $("#line_101 p").html("<a href='https://google.com'>구글 바로가기</a>")
+
+            var result2 = $("#line_102").text();
+            console.log(result2);
+            $("#line_102 h2").text("텍스트 수정");
+
+            var result3 = $("#logo img").attr("src");
+            console.log(result3);
+
+            $("#logo img").attr({
+                "width": "200px",
+                "src": "./img/naver.jpg"
+            }).removeAttr("border");
+
+            $("#i201").addClass("aqua");
+            $("#i202").removeClass("red");
+            $("#i203").toggleClass("green");
+            $("#i204").toggleClass("green");
+            $("#i206").text($("#i205").hasClass("yellow"));
+        });
+    </script>
+    <style>
+        .red { background-color: red; }
+        .green { background-color: green; }
+        .yellow { background-color: yellow; }
+        .aqua { background-color: aqua; }
+    </style>
+</head>
+<body>
+    <h1>
+        <strong>1호선</strong>
+    </h1>
+    <section id="line_101">
+        <h2>서울역</h2>
+        <p>서울역이다</p>
+    </section>
+    <section id="line_102">
+        <h2>
+            <em>용산역</em>
+        </h2>
+        <p>용산역</p>
+    </section>
+    <section id="logo">
+        <h2>사진 바꿔보기</h2>
+        <p>
+            <img src="./img/kakao.jpg" border="2" width="300px">
+        </p>
+    </section>
+    <section id="line_2">
+        <p id="i201">잠실</p>
+        <p id="i202" class="red">잠실새내</p>
+        <p id="i203">종합운동장</p>
+        <p id="i204" class="green">삼성</p>
+        <p id="i205" class="yellow">선릉</p>
+        <p id="i206"></p>
+    </section>
+</body>
+</html>

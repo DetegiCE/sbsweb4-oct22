@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        var currentItemNumber = 2;
+        function newItem(itemName) {
+            var newItemHTML = "<li id='item" + currentItemNumber + "'>" + itemName;
+            newItemHTML += "<button onclick='removeItem(" + currentItemNumber + ")'>x</button></li>";
+            currentItemNumber += 1;
+            return newItemHTML;
+        }
+        function addItem() {
+            var itemName = $("#shop").val();
+            var itemHTML = newItem(itemName);
+            $("#shopList").append(itemHTML);
+        }
+        function removeItem(itemId) {
+            $("#item" + itemId).remove();
+        }
+
+        function addList() {
+            var addItem = prompt("장 볼 상품을 입력하세요", "");
+            $("#shopList").append("<li>" + addItem + "</li>");
+        }
+        function removeList() {
+            var shoppingList = $("#shopList li");
+            var shopItem = $.map(shoppingList, function(v, i) {
+                return v.innerText;
+            });
+            console.log(shopItem);
+            var deleteItem = prompt("삭제 할 상품을 입력하세요", "");
+
+            var itemPosition = $.inArray(deleteItem, shopItem);
+            console.log(itemPosition);
+
+            if(itemPosition == -1) {
+                alert("존재하지 않는 상품입니다.");
+            }
+            else {
+                $("#shopList li:eq(" + itemPosition + ")").remove();
+            }
+        }
+        function emptyList() {
+            $("#shopList").empty();
+        }
+    </script>
+    <style>
+        #shopList li {
+            list-style: none;
+            padding: 10px;
+            margin-left: -30px;
+            width: 150px;
+            border: 1px solid black;
+
+            display: flex;
+            justify-content: space-between;
+        }
+        #shop {
+            width: 150px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h2>오늘의 장보기</h2>
+        <input type="text" name="shop" id="shop">
+        <button onclick="addItem()">+</button>
+        <ul id="shopList">
+            <li id="item0">
+                사과
+                <button onclick="removeItem(0)">x</button>
+            </li>
+            <li id="item1">
+                귤
+                <button onclick="removeItem(1)">x</button>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

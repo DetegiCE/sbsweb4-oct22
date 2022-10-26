@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #commentList li {
+            list-style: none;
+            margin-left: -30px;
+        }
+        #commentList .author {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        #commentList .time {
+            font-size: 0.9em;
+            color: #333;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        var commentNumber = 1;
+        $(function() {
+            $("#commentCount").text(commentNumber);
+        });
+
+        function newComment(authorName, comment) {
+            var commHTML = `<li id="comment${commentNumber}">`;
+            commHTML += "<p>";
+            commHTML += `<span class="author">${authorName}</span>`;
+        }
+
+        function addComment() {
+            var authorName = $("#inputAuthor").val();
+            var comment = $("#inputComment").val();
+            if(authorName.trim().length == 0) {
+                alert("아이디를 작성해주세요.");
+                return;
+            }
+            if(comment.trim().length == 0) {
+                alert("댓글 내용을 작성해주세요.");
+                return;
+            }
+            var commentHTML = newComment(authorName.trim(), comment.trim());
+        }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h2>댓글 (<span id="commentCount"></span>)</h2>
+        <div class="commentInput">
+            <p>
+                <input type="text" name="inputAuthor" id="inputAuthor">
+            </p>
+            <p>
+                <textarea type="text" name="comment" id="inputComment" rows="5" cols="40"></textarea>
+                <button onclick="addComment()">작성</button>
+            </p>
+        </div>
+        <hr>
+        <ul id="commentList">
+            <li id="comment0">
+                <p>
+                    <span class="author">홍길동</span>
+                    <time class="time">2022-10-26</time>
+                </p>
+                <p class="content">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+                <p>
+                    <button>삭제</button>
+                </p>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

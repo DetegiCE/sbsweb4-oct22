@@ -26,10 +26,24 @@
             $("#commentCount").text(commentNumber);
         });
 
+        function countComment() {
+            var commentList = $("#commentList li");
+            $("#commentCount").text(commentList.length);
+        }
+
         function newComment(authorName, comment) {
+            var curTime = new Date();
+
             var commHTML = `<li id="comment${commentNumber}">`;
             commHTML += "<p>";
             commHTML += `<span class="author">${authorName}</span>`;
+            commHTML += `<time class="time">${curTime}</time>`;
+            commHTML += "</p>";
+            commHTML += `<p class="content">`;
+            commHTML += comment;
+            commHTML += `</p><p><button onclick="removeComment(${commentNumber})">삭제</button></p>`;
+            commentNumber += 1;
+            return commHTML;
         }
 
         function addComment() {
@@ -44,6 +58,14 @@
                 return;
             }
             var commentHTML = newComment(authorName.trim(), comment.trim());
+
+            $("#commentList").append(commentHTML);
+            countComment();
+        }
+
+        function removeComment(commentId) {
+            $("#comment" + commentId).remove();
+            countComment();
         }
     </script>
 </head>
@@ -70,7 +92,7 @@
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                 </p>
                 <p>
-                    <button>삭제</button>
+                    <button onclick="removeComment(0)">삭제</button>
                 </p>
             </li>
         </ul>

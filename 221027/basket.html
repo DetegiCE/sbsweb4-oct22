@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="basket.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="basket.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <h2 id="basketTitle">장바구니 (<span class="basketCount">3</span>)</h2>
+        <div id="basketAdd">
+            <h3>상품추가</h3>
+            <div id="itemNameInpWrap">
+                <label for="itemNameInp">상품명</label>
+                <input type="text" id="itemNameInp">
+            </div>
+            <div id="itemSellerInpWrap">
+                <label for="itemSellerInp">판매자</label>
+                <input type="text" id="itemSellerInp">
+            </div>
+            <div id="itemPriceInpWrap">
+                <label for="itemPriceInp">개당 가격</label>
+                <input type="number" id="itemPriceInp" min="0">
+            </div>
+            <div id="itemCountInpWrap">
+                <label for="itemCountInp">개수</label>
+                <input type="number" id="itemCountInp" min="1">
+            </div>
+            <div id="addButtonWrap">
+                <button onclick="addItem()">추가</button>
+            </div>
+        </div>
+        <ul id="basketList">
+            <li id="item0">
+                <div class="itemNameWrap">
+                    <p class="itemName">고당도 수박 1kg</p>
+                    <p>판매자: <span class="itemSeller">홍길동</span></p>
+                </div>
+                <div class="itemPriceWrap">
+                    <span class="itemPrice" value="18000">18,000</span>원
+                </div>
+                <div class="itemCountWrap">
+                    <input type="number" class="itemCount" min="1" onkeyup="changeEachPrice(0)">
+                </div>
+                <div class="itemTotalPriceWrap">
+                    <span class="itemTotalPrice" value="54000">54,000</span>원
+                </div>
+            </li>
+            <li id="item1">
+                <div class="itemNameWrap">
+                    <p class="itemName">고당도 수박 1kg</p>
+                    <p>판매자: <span class="itemSeller">홍길동</span></p>
+                </div>
+                <div class="itemPriceWrap">
+                    <span class="itemPrice" value="18000">18,000</span>원
+                </div>
+                <div class="itemCountWrap">
+                    <input type="number" class="itemCount" min="1" onkeyup="changeEachPrice(1)">
+                </div>
+                <div class="itemTotalPriceWrap">
+                    <span class="itemTotalPrice" value="54000">54,000</span>원
+                </div>
+            </li>
+            <li id="item2">
+                <div class="itemNameWrap">
+                    <p class="itemName">고당도 수박 1kg</p>
+                    <p>판매자: <span class="itemSeller">홍길동</span></p>
+                </div>
+                <div class="itemPriceWrap">
+                    <span class="itemPrice" value="18000">18,000</span>원
+                </div>
+                <div class="itemCountWrap">
+                    <input type="number" class="itemCount" min="1" onkeyup="changeEachPrice(2)">
+                </div>
+                <div class="itemTotalPriceWrap">
+                    <span class="itemTotalPrice" value="54000">54,000</span>원
+                </div>
+            </li>
+        </ul>
+        <div id="basketFooter">
+            <div class="itemTotalCountWrap">
+                총 <span class="basketCount">3</span> 종
+            </div>
+            <div class="itemTotalPriceSumWrap">
+                합계 <span class="itemTotalPriceSum">162,000</span>원
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -13,6 +13,54 @@
     padding-bottom: 20px;
 }
 
+#couponAdd {
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr 1fr;
+    padding: 10px;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+#couponAdd h3 {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+#couponAdd div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 10px;
+}
+
+#couponAdd #couponNameInp {
+    width: 70%;
+    height: 30px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+#couponAdd #couponSaleInp {
+    width: 50%;
+    height: 30px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+#couponAdd #couponButtonWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#couponAdd button {
+    display: block;
+    width: 50%;
+    height: 50%;
+}
+
 #basketAdd {
     display: grid;
     grid-template-columns: 1fr 4fr 2fr 1fr;
@@ -101,7 +149,7 @@
     border-bottom: 1px solid black;
     padding: 10px 5px;
 
-    grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-template-columns: 5fr 3fr 3fr 3fr 1fr;
 }
 
 #basketList .itemName {
@@ -161,4 +209,46 @@
 .itemTotalPriceSum {
     font-size: 1.2em;
     color: red;
+}
+
+#couponWrap {
+    margin: 30px 0;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    padding: 20px 5px;
+}
+
+#couponSelect {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    margin-bottom: 15px;
+}
+
+#couponSelect #coupon {
+    width: 50%;
+    height: 100%;
+}
+
+#couponSelect button {
+    width: 20%;
+    height: 100%;
+}
+
+#couponPrice {
+    display: grid;
+    grid-template-columns: 8fr 1fr 8fr 1fr 8fr;
+}
+
+#couponPrice div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#couponPrice div span {
+    padding: 0 10px;
+    color: red;
+    font-size: 1.4em;
 }

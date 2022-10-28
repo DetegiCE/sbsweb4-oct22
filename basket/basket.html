@@ -34,6 +34,20 @@
                 <button onclick="addItem()">추가</button>
             </div>
         </div>
+        <div id="couponAdd">
+            <h3>쿠폰추가</h3>
+            <div id="couponNameInpWrap">
+                <label for="couponNameInp">쿠폰이름</label>
+                <input type="text" id="couponNameInp">
+            </div>
+            <div id="couponSaleInpWrap">
+                <label for="couponSaleInp">할인율</label>
+                <input type="number" id="couponSaleInp">
+            </div>
+            <div id="couponButtonWrap">
+                <button onclick="addCoupon()">추가</button>
+            </div>
+        </div>
         <ul id="basketList">
             <li id="item0">
                 <div class="itemNameWrap">
@@ -49,36 +63,7 @@
                 <div class="itemTotalPriceWrap">
                     <span class="itemTotalPrice" value="54000">54,000</span>원
                 </div>
-            </li>
-            <li id="item1">
-                <div class="itemNameWrap">
-                    <p class="itemName">고당도 수박 1kg</p>
-                    <p>판매자: <span class="itemSeller">홍길동</span></p>
-                </div>
-                <div class="itemPriceWrap">
-                    <span class="itemPrice" value="18000">18,000</span>원
-                </div>
-                <div class="itemCountWrap">
-                    <input type="number" class="itemCount" min="1" onkeyup="changeEachPrice(1)">
-                </div>
-                <div class="itemTotalPriceWrap">
-                    <span class="itemTotalPrice" value="54000">54,000</span>원
-                </div>
-            </li>
-            <li id="item2">
-                <div class="itemNameWrap">
-                    <p class="itemName">고당도 수박 1kg</p>
-                    <p>판매자: <span class="itemSeller">홍길동</span></p>
-                </div>
-                <div class="itemPriceWrap">
-                    <span class="itemPrice" value="18000">18,000</span>원
-                </div>
-                <div class="itemCountWrap">
-                    <input type="number" class="itemCount" min="1" onkeyup="changeEachPrice(2)">
-                </div>
-                <div class="itemTotalPriceWrap">
-                    <span class="itemTotalPrice" value="54000">54,000</span>원
-                </div>
+                <button onclick="removeItem(0)">x</button>
             </li>
         </ul>
         <div id="basketFooter">
@@ -87,6 +72,26 @@
             </div>
             <div class="itemTotalPriceSumWrap">
                 합계 <span class="itemTotalPriceSum">162,000</span>원
+            </div>
+        </div>
+        <div id="couponWrap">
+            <div id="couponSelect">
+                <h3>할인쿠폰 선택</h3>
+                <select name="coupon" id="coupon">
+                    <option sale="0">---쿠폰 선택 안함---</option>
+                    <option sale="10">회원가입 쿠폰 (10% 할인)</option>
+                    <option sale="15">깜짝 쿠폰 (15% 할인)</option>
+                    <option sale="20">생일 쿠폰 (20% 할인)</option>
+                    <option sale="15.789">할인 쿠폰 (15.789% 할인)</option>
+                </select>
+                <button onclick="couponChange()">쿠폰 적용</button>
+            </div>
+            <div id="couponPrice">
+                <div>이전 금액 <span class="itemTotalPriceSum"></span>원</div>
+                <div>-</div> 
+                <div>할인 금액 <span class="couponSalePrice">0</span>원</div> 
+                <div>=</div>
+                <div>최종 금액 <span class="afterCouponPrice">54,000</span>원</div>
             </div>
         </div>
     </div>

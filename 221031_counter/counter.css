@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#wrap {
+    width: 100%;
+    margin-top: 30px;
+
+    text-align: center;
+}
+
+.numberWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numberWrap h3 {
+    margin: 10px;
+    font-size: 30px;
+}
+
+button {
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+
+    background-color: #EEE;
+    border: none;
+}

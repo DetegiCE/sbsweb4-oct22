@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 5000px;
+            height: 5000px;
+        }
+        #scoreWrap {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            border: 3px solid black;
+            background-color: #888;
+            color: white;
+
+            width: 100px;
+            height: 30px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #posWrap {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            font-size: 20px;
+
+            background-color: rgba(30, 30, 30, 0.3);
+            padding: 5px 10px;
+        }
+
+        .box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 3px solid black;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script> 
+    <script>
+        var score = 0;
+        function boxClicked(boxId) {
+            score += 1;
+            $("#score").text(score);
+            $(`#box${boxId}`).remove();
+
+            if(score >= 5) {
+                $("#wrap").css("background-color", "pink");
+            }
+        }
+
+        $(function() {
+
+            $(document).on("mousemove", function(e) {
+                $("#xpos").text(e.pageX);
+                $("#ypos").text(e.pageY);
+            });
+
+            for(var i=1 ; i<=10 ; i++) {
+                var boxX = Math.random() * 4900;
+                var boxY = Math.random() * 4900;
+                var boxHTML = makeBox(i, boxX, boxY);
+                $("#wrap").append(boxHTML);
+            }
+
+            function makeBox(id, xpos, ypos) {
+                var red = Math.floor(Math.random() * 256);
+                var green = Math.floor(Math.random() * 256);
+                var blue = Math.floor(Math.random() * 256);
+                return `<div id="box${id}" class="box" onclick="boxClicked(${id})" style="top: ${ypos}px; left: ${xpos}px; background-color: rgb(${red}, ${green}, ${blue})"></div>`;
+            }
+
+
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="scoreWrap">
+            SCORE: <span id="score">0</span>
+        </div>
+        <div id="posWrap">
+            (<span id="xpos"></span>, <span id="ypos"></span>)
+        </div>
+    </div>
+</body>
+</html>

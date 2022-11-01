@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script>
+        $(function() {
+            // $(document).ready(function() {
+            //     var height1 = $("#img1").height();
+            //     console.log('ready ' + height1);
+            // });
+
+            // $(window).load(function() {
+            //     var height2 = $("#img1").height();
+            //     console.log("load " + height2);
+            // });
+            $(".btn1").on({
+                "mouseover": function() {
+                    $(".text1").css("background-color", "yellow");
+                },
+                "mouseout": function() {
+                    $(".text1").css("background", "none");
+                }
+            });
+
+            $(".btn2").hover(function() {
+                $(".text2").css("background-color", "green");
+            }, function() {
+                $(".text2").css("background", "none");
+            });
+
+            $("#box1").on("mouseout", function() {
+                $("#box1").css("background-color", "yellow");
+            });
+
+            $("#box2").on("mouseleave", function() {
+                $("#box2").css("background-color", "blue");
+            });
+
+            $(document).on("mousemove", function(e) {
+                $(".xpos").text(e.pageX);
+                $(".ypos").text(e.pageY);
+            });
+
+            $(window).on("scroll", function() {
+                var top = $(this).scrollTop();
+                var left = $(this).scrollLeft();
+                $(".scrolltop").text(top);
+                $(".scrollleft").text(left);
+            });
+        });
+
+    </script>
+    <style>
+        body {
+            height: 5000px;
+            width: 5000px;
+        }
+
+        #wrap {
+            background-color: white;
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            position: fixed;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button class="btn1">Mouse Over/Mouse Out</button>
+    </p>
+    <p class="text1">텍스트1</p>
+    <p>
+        <button class="btn2">Hover</button>
+    </p>
+    <p class="text2">텍스트2</p>
+
+    <h2>mouseout</h2>
+    <div id="box1">
+        <p>내용1</p>
+        <p>내용2</p>
+        <p>내용3</p>
+    </div>
+
+    <h2>mouseleave</h2>
+    <div id="box2">
+        <p>내용4</p>
+        <p>내용5</p>
+        <p>내용6</p>
+    </div>
+
+    <h2>mousemove</h2>
+    <p>X : <span class="xpos"></span></p>
+    <p>Y : <span class="ypos"></span></p>
+
+    <div id="wrap">
+        <h2>scroll</h2>
+        <p>scrollTop: <span class="scrolltop"></span></p>
+        <p>scrollLeft: <span class="scrollleft"></span></p>
+    </div>
+</body>
+</html>

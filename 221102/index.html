@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(function() {
+            var xpos = 500;
+            var ypos = 500;
+            $(document).on("keydown", function(e) {
+                var keyValue = e.keyCode;
+                $("#userid").val(keyValue);
+                switch(keyValue) {
+                    case 37:
+                        xpos -= 1;
+                        $("#box").css("left", xpos + "px");
+                        break;
+                    case 39:
+                        xpos += 1;
+                        $("#box").css("left", xpos + "px");
+                        break;
+                    case 38:
+                        ypos -= 1;
+                        $("#box").css("top", ypos + "px");
+                        break;
+                    case 40:
+                        ypos += 1;
+                        $("#box").css("top", ypos + "px");
+                        break;
+                    default:
+                        break;
+                }
+            })
+        });
+    </script>
+    <style>
+        #box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 500px;
+            left: 500px;
+            background-color: pink;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <input type="text" name="userid" id="userid">
+    </p>
+    <div id="box"></div>
+</body>
+</html>

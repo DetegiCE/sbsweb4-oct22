@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content {
+            width: 400px;
+            background-color: gainsboro;
+        }
+
+        .text1 {
+            background-color: aqua;
+        }
+
+        .text2 {
+            background-color: pink;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(function() {
+            $(".btn2").hide();
+
+            $(".btn1").on("click", function() {
+                $(".box").slideUp(1000, "linear", function() {
+                    $(".btn1").hide();
+                    $(".btn2").show();
+                })
+            });
+
+            $(".btn2").on("click", function() {
+                $(".box").fadeIn(1000, "swing", function() {
+                    $(".btn2").hide();
+                    $(".btn1").show();
+                })
+            });
+
+            $(".btn3").on("click", function() {
+                $(".box").slideToggle(1000, "swing");
+            });
+
+            $(".btn4").on("click", function() {
+                $(".box").fadeTo("fast", 0.3);
+            });
+
+            $(".btn5").on("click", function() {
+                $(".box").fadeTo("fast", 1);
+            });
+
+            $(".btn6").on("click", function() {
+                $(".text1").animate({
+                    marginLeft: "500px"
+                }, 2000, "linear", function() {
+                    alert("text1 모션 완료!");
+                });
+            });
+
+            $(".btn7").on("click", function() {
+                $(".text2").animate({
+                    marginLeft: "+=50px"
+                }, 1000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>
+        <button class="btn1">slideUp</button>
+        <button class="btn2">fadeIn</button>
+    </p>
+    <p>
+        <button class="btn3">slideToggle</button>
+    </p>
+    <p>
+        <button class="btn4">fadeTo(0.3)</button>
+        <button class="btn5">fadeTo(1)</button>
+    </p>
+    <div class="box">
+        <div class="content">
+            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. 
+        </div>
+    </div>
+    <p>
+        <button class="btn6">버튼6</button>
+    </p>
+    <span class="text1">500px 이동</span>
+    <p>
+        <button class="btn7">버튼7</button>
+    </p>
+    <span class="text2">50px 씩 이동</span>
+</body>
+</html>

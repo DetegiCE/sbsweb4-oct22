@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(function() {
+            $(".btn1.on").on("mouseover focus", function() {
+                alert("Hello");
+            });
+            $(".btn1").addClass("on");
+
+            $(document).on("mouseover focus", ".btn2.on", function() {
+                alert("Welcome!");
+            });
+            $(".btn2").addClass("on");
+
+            $("#wrap").delegate(".btn3.on", "mouseover focus", function() {
+                alert("Good Bye");
+            });
+            $(".btn3").addClass("on");
+
+            $(document).one("mouseover focus", ".btn4.on", function() {
+                alert("Have a nice day!");
+            });
+            $(".btn4").addClass("on");
+        })
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p>
+            <button class="btn1">버튼1</button>
+        </p>
+        <p>
+            <button class="btn2">버튼2</button>
+        </p>
+        <p>
+            <button class="btn3">버튼3</button>
+        </p>
+        <p>
+            <button class="btn4">버튼4</button>
+        </p>
+    </div>
+</body>
+</html>

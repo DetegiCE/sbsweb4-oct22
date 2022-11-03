@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            width: 120px;
+            text-align: center;
+        }
+        .text1 { background-color: aqua; }
+        .text2 { background-color: beige; }
+        .text3 { background-color: chartreuse; }
+        .text4 { background-color: darkkhaki; } 
+        .text5 { background-color: forestgreen; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(function(){
+            $(".text1").animate({
+                marginLeft: "300px"
+            }, 1000);
+
+            $(".text2").delay(3000);
+            $(".text2").animate({
+                marginLeft: "300px"
+            }, 1000);
+
+            $(".btn1").on("click", moveBox);
+
+            function moveBox() {
+                $(".text3").animate({
+                    marginLeft: "+=50px"
+                }, 500);
+
+                $(".text4").animate({
+                    marginLeft: "+=50px"
+                }, 500);
+                $(".text4").stop();
+
+                $(".text5").animate({
+                    marginLeft: "+=50px"
+                }, 500);
+                $(".text5").stop(true, true);
+            }
+        })
+    </script>
+</head>
+<body>
+    <p class="text1">박스1</p>
+    <p class="text2">박스2<br>delay(3000)</p>
+    <p>
+        <button class="btn1">50px 이동</button>
+    </p>
+    <p class="text3">박스3</p>
+    <p class="text4">박스4<br>stop()</p>
+    <p class="text5">박스5<br>stop(true, true)</p>
+</body>
+</html>

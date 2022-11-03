@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(function() {
+            var country = ["USD", "JPY", "CNY"];
+            for(var i=0 ; i<country.length ; i++) {
+                console.log(country[i]);
+                $.ajax({
+                    url: `https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRW${country[i]}`,
+                    dataType: "json",
+                    success: function(data) {
+                        console.log(data[0]);
+                        $(`#${country[i]} td.currency`).text(data[0].name);
+                        $(`#${country[i]} td.baseprice`).text(data[0].basePrice);
+                        $(`#${country[i]} td.time`).text(data[0].date + " " + data[0].time);
+                    }
+                })
+            }
+        })
+    </script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>통화</th>
+                <th>기준가</th>
+                <th>기준시간</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="USD">
+                <td class="currency"></td>
+                <td class="baseprice"></td>
+                <td class="time"></td>
+            </tr>
+            <tr id="JPY">
+                <td class="currency"></td>
+                <td class="baseprice"></td>
+                <td class="time"></td>
+            </tr>
+            <tr id="CNY">
+                <td class="currency"></td>
+                <td class="baseprice"></td>
+                <td class="time"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

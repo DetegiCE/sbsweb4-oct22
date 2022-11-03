@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            position: relative;
+        }
+        #controlWrap {
+            display: grid;
+            grid-template-columns: 20px 20px 20px;
+            grid-template-rows: 20px 20px;
+        }
+        #ctrlUp {
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
+        #ctrlLeft {
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+        #ctrlDown {
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+        #ctrlRight {
+            grid-column: 3/4;
+            grid-row: 2/3;
+        }
+        #box {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            background-color: darkgreen;
+
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            z-index: -1;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        var xpos = 200;
+        var ypos = 200;
+        $(function() {
+            $("#ctrlUp").on("click", function() {
+                ypos -= 30;
+                $("#box").animate({
+                    top: "-=30px"
+                }, 500, "linear");
+                if(ypos <= 0) {
+                    alert("이동불가!");
+                    ypos = 200;
+                    xpos = 200;  
+                    $("#box").animate({
+                        top: "200px",
+                        left: "200px"
+                    }, 500, "swing");
+                }
+            });
+            $("#ctrlDown").on("click", function() {
+                ypos += 30;
+                $("#box").animate({
+                    top: "+=30px"
+                }, 500, "linear");
+                if(ypos >= 450) {
+                    alert("이동불가!");
+                    ypos = 200;
+                    xpos = 200;  
+                    $("#box").animate({
+                        top: "200px",
+                        left: "200px"
+                    }, 500, "swing");
+                }
+            });
+            $("#ctrlLeft").on("click", function() {
+                xpos -= 30;
+                $("#box").animate({
+                    left: "-=30px"
+                }, 500, "linear");
+                if(xpos <= 0) {
+                    alert("이동불가!");
+                    ypos = 200;
+                    xpos = 200;  
+                    $("#box").animate({
+                        top: "200px",
+                        left: "200px"
+                    }, 500, "swing");
+                }
+            });
+            $("#ctrlRight").on("click", function() {
+                xpos += 30;
+                $("#box").animate({
+                    left: "+=30px"
+                }, 500, "linear");
+                if(xpos >= 450) {
+                    alert("이동불가!");
+                    ypos = 200;
+                    xpos = 200;  
+                    $("#box").animate({
+                        top: "200px",
+                        left: "200px"
+                    }, 500, "swing");
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="controlWrap">
+            <button id="ctrlUp">^</button>
+            <button id="ctrlLeft">&lt;</button>
+            <button id="ctrlDown">v</button>
+            <button id="ctrlRight">&gt;</button>
+        </div>
+        <div id="box"></div>
+    </div>
+</body>
+</html>

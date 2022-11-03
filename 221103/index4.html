@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(function() {
+            $.ajax({
+                url: "https://aws.random.cat/meow",
+                type: "get",
+                dataType: "json",
+                success: function(data) {
+                    console.log(data);
+                    console.log(data.file);
+                    $("#wrap img").attr("src", data.file);
+                }
+            });
+            $.ajax({
+                url: "https://random.dog/woof.json",
+                type: "get",
+                dataType: "json",
+                success: function(data) {
+                    $("#dog img").attr("src", data.url);
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <img src="">
+    </div>
+    <div id="dog">
+        <img src="">
+    </div>
+</body>
+</html>

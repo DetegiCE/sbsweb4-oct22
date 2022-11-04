@@ -15,3 +15,22 @@ dequeue(): queue() 가 실행된 후에 적용된 애니메이션이 취소되�
 clearQueue(): 큐를 클리어(비운다)한다 -> 현재 실행중인 애니메이션을 제외하고 나머지 대기중인 모든 애니메이션을 삭제한다
 
 버튼을 눌렀을 때, h1이 1초동안 점점 투명해지면서 사라지게 하는 코드를 만들어봅시다
+
+
+Ajax (Asynchronous Javascript And XML)
+Asynchronous -> async (비동기)
+-> 동기화 되지 않은
+ajax: 서버와 html(js)가 서로 통신할 때
+-> url (웹사이트 주소)
+type(어떤 방식으로 웹사이트와 통신할 것인가?, get, post)
+data(전송할 데이터)
+dataType(요청한 데이터 형식, html, xml, json, text, jsonp)
+success(데이터를 가져오거나 보내기에 성공한 경우 발생하는 함수)
+error(에러가 났을때 발생하는 함수)
+
+오픈 API
+https://aws.random.cat/meow -> 고양이
+https://random.dog/woof.json -> 강아지
+https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD
+-> 환율정보
+https://countryflagsapi.com/png/국가코드 -> 국가의 국기

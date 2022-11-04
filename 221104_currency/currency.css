@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#wrap {
+    width: 800px;
+    margin: 50px auto;
+    border: 5px solid black;
+}
+
+.tabWrap {
+    display: flex;
+    height: 80px;
+
+    border-bottom: 1px solid black;
+}
+
+.tab {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #EEE;
+}
+
+.tab img {
+    height: 30px;
+}
+
+.tab .tabName {
+    padding: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.infoWrap {
+    display: flex;
+}
+
+.infoWrap .infoLeftWrap {
+    width: 400px;
+}
+
+.infoWrap .infoRightWrap {
+    width: 400px;
+}
+
+.priceInfo {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    margin: 30px 0;
+
+    font-size: 2em;
+}
+
+.priceInfo .origValue,
+.priceInfo .krwValue {
+    color: rgb(220, 40, 40);
+}
+
+.flagWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flagWrap img {
+    width: 80%;
+}
+
+.timeWrap {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.timeWrap p:nth-child(1) {
+    font-weight: bold;
+}
+
+.timeWrap .time {
+    font-size: 0.9em;
+}
+
+.origToKrw,
+.krwToOrig {
+    margin: 20px 0;
+}
+
+.otkName,
+.ktoName {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.otkInputWrap input,
+.ktoInputWrap input {
+    width: 150px;
+    height: 30px;
+    font-size: 1.1em;
+}
+
+.otkInputWrap label,
+.ktoInputWrap label {
+    font-size: 1.1em;
+}
+
+.otkKrwValue,
+.ktoOrigValue {
+    font-size: 1.1em;
+    color: rgb(220, 40, 40);
+    font-weight: bold;
+}
+
+.addInfo {
+    margin-top: 40px;
+    margin-right: 30px;
+}
+
+.addInfo > div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.cbpValue, .cspValue,
+.tspValue, .tbpValue {
+    font-size: 1.1em;
+    color: rgb(220, 40, 40);
+    font-weight: bold;
+}

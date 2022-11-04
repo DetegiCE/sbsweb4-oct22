@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="currency.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="currency.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="tabWrap">
+        </div>
+        <div class="infoWrap">
+            <div class="infoLeftWrap">
+                <div class="priceInfo">
+                    <p class="origCurrency">
+                        <span class="origValue">1</span>
+                        <span class="origCode">USD</span>
+                    </p>
+                    <p>=</p>
+                    <p class="krwCurrency">
+                        <span class="krwValue">1425.8</span>
+                        <span class="krwCode">KRW</span>
+                    </p>
+                </div>
+                <div class="flagWrap">
+                    <img src="https://countryflagsapi.com/png/US" class="infoFlag">
+                </div>
+                <div class="timeWrap">
+                    <p>기준 시간</p>
+                    <p class="time">2022-11-04 11:04:59</p>
+                </div>
+            </div>
+            <div class="infoRightWrap">
+                <div class="origToKrw">
+                    <p class="otkName">
+                        <span class="origCode">USD</span>
+                        <span>-></span>
+                        <span class="krwCode">KRW</span>
+                    </p>
+                    <p class="otkInputWrap">
+                        <input type="number" id="otkInput">
+                        <label for="otkInput">
+                            <span class="origCode">USD</span>
+                            <span>=</span>
+                            <span class="otkKrwValue">123,456</span>
+                            <span class="krwCode">KRW</span>
+                        </label>
+                    </p>
+                </div>
+                <div class="krwToOrig">
+                    <p class="ktoName">
+                        <span class="krwCode">KRW</span>
+                        <span>-></span>
+                        <span class="origCode">USD</span>
+                    </p>
+                    <p class="ktoInputWrap">
+                        <input type="number" id="ktoInput">
+                        <label for="ktoInput">
+                            <span class="krwCode">KRW</span>
+                            <span>=</span>
+                            <span class="ktoOrigValue">123,456</span>
+                            <span class="origCode">USD</span>
+                        </label>
+                    </p>
+                </div>
+                <div class="addInfo">
+                    <div>
+                        <div>현찰 사실 때</div>
+                        <div class="cbpInfo">
+                            <span class="cbpValue">123,456</span>
+                            <span class="krwCode">KRW</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div>현찰 파실 때</div>
+                        <div class="cspInfo">
+                            <span class="cspValue">123,456</span>
+                            <span class="krwCode">KRW</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div>송금 보내실 때</div>
+                        <div class="tspInfo">
+                            <span class="tspValue">123,456</span>
+                            <span class="krwCode">KRW</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div>송금 받으실 때</div>
+                        <div class="tbpInfo">
+                            <span class="tbpValue">123,456</span>
+                            <span class="krwCode">KRW</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

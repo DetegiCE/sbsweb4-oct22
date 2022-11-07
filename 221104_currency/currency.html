@@ -13,6 +13,9 @@
     <div id="wrap">
         <div class="tabWrap">
         </div>
+        <div class="coverWrap">
+            <span>상단 탭에서 국가를 선택해주세요</span>
+        </div>
         <div class="infoWrap">
             <div class="infoLeftWrap">
                 <div class="priceInfo">
@@ -35,6 +38,18 @@
                 </div>
             </div>
             <div class="infoRightWrap">
+                <div class="selectWrap">
+                    <div class="selectText">환전 선택</div>
+                    <div>
+                        <select id="priceSelect">
+                            <option value="basePrice" selected>기본 환율</option>
+                            <option value="cbpPrice">현찰 사실 때</option>
+                            <option value="cspPrice">현찰 파실 때</option>
+                            <option value="tspPrice">송금 보내실 때</option>
+                            <option value="tbpPrice">송금 받으실 때</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="origToKrw">
                     <p class="otkName">
                         <span class="origCode">USD</span>

@@ -7,6 +7,10 @@ $(function() {
     </div>`;
     }
 
+    $(".coverWrap").height($(".infoWrap").height() + 30);
+
+    var exchangePrice = 0;
+
     for(var i=0 ; i<country.length ; i++) {
         $(".tabWrap").append(currencyHTML(country[i]));
     }
@@ -23,6 +27,9 @@ $(function() {
     // }
 
     $(".tab").on("click", function(){
+        $(".coverWrap").css("display", "none");
+        $(".infoWrap").css("filter", "none");
+
         var currencyName = $(this).text().trim();
         $(".origCode").text(currencyName);
         $(".infoFlag").attr("src", `https://countryflagsapi.com/png/${currencyName.substring(0,2)}`);
@@ -53,22 +60,24 @@ $(function() {
         })
     });
 
-    $("#otkInput").on("keyup", function() {
+    $("#otkInput").on("keyup", otkInputKeyup);
+    $("#ktoInput").on("keyup", ktoInputKeyup);
+    $("#priceSelect").on("change", priceSelectChange);
+
+    function otkInputKeyup() {
         var otkInputValue = $("#otkInput").val();
-        var currencyValue = $(".krwValue").text();
-        var changeValue = otkInputValue * currencyValue;
+        var changeValue = otkInputValue * exchangePrice;
 
         var currencyName = $(".origCode").text();
         if(currencyName.indexOf("JPY") != -1) {
             changeValue /= 100;
         }
         $(".otkKrwValue").text(Number(changeValue).toLocaleString(undefined, {maximumFractionDigits: 2}));
-    });
+    }
 
-    $("#ktoInput").on("keyup", function() {
+    function ktoInputKeyup() {
         var ktoInputValue = $("#ktoInput").val();
-        var currencyValue = $(".krwValue").text();
-        var changeValue = ktoInputValue / currencyValue;
+        var changeValue = ktoInputValue / exchangePrice;
         
         var currencyName = $(".origCode").text();
         if(currencyName.indexOf("JPY") != -1) {
@@ -76,5 +85,27 @@ $(function() {
         }
 
         $(".ktoOrigValue").text(Number(changeValue).toLocaleString(undefined, {maximumFractionDigits: 2}));
-    })
+    }
+
+    function priceSelectChange() {
+        var selected = $(this).val();
+        if(selected == "basePrice") {
+            exchangePrice = Number($(".krwValue").text());
+        }
+        else if(selected == "cbpPrice") {
+            exchangePrice = Number($(".cbpValue").text());
+        }
+        else if(selected == "cspPrice") {
+            exchangePrice = Number($(".cspValue").text());
+        }
+        else if(selected == "tspPrice") {
+            exchangePrice = Number($(".tspValue").text());
+        }
+        else {
+            exchangePrice = Number($(".tbpValue").text());
+        }
+        console.log(exchangePrice);
+        otkInputKeyup();
+        ktoInputKeyup();
+    }
 })

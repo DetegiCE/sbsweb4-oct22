@@ -23,6 +23,12 @@
     font-size: 2em;
 }
 
+.endWrap {
+    font-size: 5em;
+    margin: 20px 0;
+    display: none;
+}
+
 .timeWrap {
     display: flex;
     justify-content: center;
